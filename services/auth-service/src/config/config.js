@@ -18,9 +18,6 @@ const config = {
   },
   bcrypt: {
     saltRounds: parseInt(process.env.BCRYPT_SALT_ROUNDS) || 10
-  },
-  kafka: {
-    broker: process.env.KAFKA_BROKER || 'localhost:9092'
   }
 };
 
