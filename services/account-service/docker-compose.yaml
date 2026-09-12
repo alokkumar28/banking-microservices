@@ -4,10 +4,10 @@ services:
     container_name: account-db
     environment:
       POSTGRES_USER: account_db
-      POSTGRES_PASSWORD: account_pass
+      POSTGRES_PASSWORD: account_password
       POSTGRES_DB: account_db
     ports:
-      - "5402:5432"
+      - "5052:5432"
     volumes:
       - account-db-data:/var/lib/postgresql/data
 

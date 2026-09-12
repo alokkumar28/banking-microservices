@@ -5,10 +5,10 @@ const config = {
   nodeEnv: process.env.NODE_ENV || 'development',
   db: {
     host: process.env.DB_HOST || 'localhost',
-    port: process.env.DB_PORT || 5432,
-    user: process.env.DB_USER || 'authdb',
-    password: process.env.DB_PASSWORD || 'authpass',
-    database: process.env.DB_NAME || 'authdb'
+    port: process.env.DB_PORT || 5050,
+    user: process.env.DB_USER || 'auth_db',
+    password: process.env.DB_PASSWORD || 'auth_password',
+    database: process.env.DB_NAME || 'auth_db'
   },
   jwt: {
     accessSecret: process.env.JWT_ACCESS_SECRET,

@@ -16,9 +16,9 @@ const config = {
 
   db: {
     host: process.env.DB_HOST || "localhost",
-    port: parseInt(process.env.DB_PORT) || 5432,
+    port: parseInt(process.env.DB_PORT) || 5052,
     user: process.env.DB_USER || "account_db",
-    password: process.env.DB_PASSWORD || "account_pass",
+    password: process.env.DB_PASSWORD || "account_password",
     database: process.env.DB_NAME || "account_db",
   },
 

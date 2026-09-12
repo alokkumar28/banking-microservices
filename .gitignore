@@ -33,3 +33,5 @@ build/
 *.sqlite
 *.db
 EOF
+
+*.md
