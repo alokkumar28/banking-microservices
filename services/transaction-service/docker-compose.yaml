@@ -1,0 +1,15 @@
+services:
+  transaction-db:
+    image: postgres:16
+    container_name: transaction-db
+    environment:
+      POSTGRES_USER: transaction_db
+      POSTGRES_PASSWORD: transaction_password
+      POSTGRES_DB: transaction_db
+    ports:
+      - "5053:5432"
+    volumes:
+      - transaction-db-data:/var/lib/postgresql/data
+
+volumes:
+  transaction-db-data:
