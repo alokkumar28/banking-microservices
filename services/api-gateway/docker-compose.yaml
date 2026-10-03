@@ -1,0 +1,48 @@
+version: "3.8"
+
+services:
+  api-gateway:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: api-gateway
+
+    ports:
+      - "8000:8000"
+
+    environment:
+      PORT: 8000
+      NODE_ENV: development
+
+      JWT_ACCESS_SECRET: your-super-secret-access-key-change-in-production
+      JWT_REFRESH_SECRET: your-super-secret-refresh-key-change-in-production
+
+      AUTH_SERVICE_URL: http://auth-service:8080
+      USER_SERVICE_URL: http://user-service:8081
+      ACCOUNT_SERVICE_URL: http://account-service:8082
+      TRANSACTION_SERVICE_URL: http://transaction-service:8083
+      NOTIFICATION_SERVICE_URL: http://notification-service:8084
+
+      INTERNAL_SERVICE_TOKEN: internal-service-secret-token
+
+      CORS_ORIGIN: "*"
+
+      RATE_LIMIT_WINDOW_MS: 900000
+      RATE_LIMIT_MAX_REQUESTS: 100
+      AUTH_RATE_LIMIT_MAX: 10
+
+      PROXY_TIMEOUT: 30000
+
+    networks:
+      - banking-network
+
+    volumes:
+      - ./src:/app/src
+      - /app/node_modules
+
+    restart: unless-stopped
+
+networks:
+  banking-network:
+    external: true
